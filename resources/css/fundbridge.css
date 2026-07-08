@@ -1,0 +1,1940 @@
+/* ==========================================================
+   FUNDBRIDGE LANDING PAGE CSS
+   Exact Blade Structure Matching
+   Dark + Light Theme
+========================================================== */
+
+
+/* ================= THEME VARIABLES ================= */
+
+
+:root {
+
+    --bg: #061426;
+    --bg-light: #0b1c34;
+
+    --card: rgba(255,255,255,0.06);
+
+    --text: #ffffff;
+    --muted: #9eacc2;
+
+    --border: rgba(255,255,255,0.12);
+
+    --green: #00d99c;
+    --green-dark:#00b982;
+
+    --blue:#2563eb;
+
+    --radius:22px;
+
+    --container:1200px;
+
+    --shadow:
+    0 25px 60px rgba(0,0,0,.35);
+
+}
+
+
+
+
+/* ================= LIGHT MODE ================= */
+
+
+body.light {
+
+
+    --bg:#ffffff;
+
+    --bg-light:#f7fafc;
+
+    --card:
+    rgba(255,255,255,.85);
+
+
+    --text:#10213d;
+
+    --muted:#64748b;
+
+
+    --border:
+    rgba(15,23,42,.08);
+
+
+    --shadow:
+    0 20px 50px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+
+
+/* ================= RESET ================= */
+
+
+* {
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+}
+
+
+
+body {
+
+
+    background:
+
+
+    radial-gradient(
+        circle at 10% 5%,
+        rgba(0,217,156,.18),
+        transparent 35%
+    ),
+
+
+    radial-gradient(
+        circle at 90% 15%,
+        rgba(37,99,235,.18),
+        transparent 35%
+    ),
+
+
+    var(--bg);
+
+
+    color:var(--text);
+
+
+    transition:.4s;
+
+
+    overflow-x:hidden;
+
+}
+
+
+
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+
+p{
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+}
+
+
+
+.container{
+
+
+    width:90%;
+
+    max-width:var(--container);
+
+    margin:auto;
+
+
+}
+
+
+
+section{
+
+
+    margin-top:90px;
+
+
+}
+
+
+
+
+
+/* ================= BUTTONS ================= */
+
+
+
+.primary-btn {
+
+
+    border:none;
+
+
+    padding:
+    14px 32px;
+
+
+    border-radius:50px;
+
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--green),
+        var(--green-dark)
+    );
+
+
+    color:white;
+
+
+    font-weight:700;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+    box-shadow:
+    0 15px 35px rgba(0,217,156,.3);
+
+
+}
+
+
+
+.primary-btn:hover{
+
+
+    transform:translateY(-3px);
+
+
+}
+
+
+
+
+
+.outline-btn{
+
+
+    padding:
+    13px 30px;
+
+
+    border-radius:50px;
+
+
+    background:transparent;
+
+
+    border:
+
+    1px solid var(--green);
+
+
+    color:var(--green);
+
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+/* ================= HEADER ================= */
+
+
+.header{
+
+
+    padding:25px 0;
+
+
+}
+
+
+
+
+.navbar{
+
+
+    width:90%;
+
+
+    max-width:var(--container);
+
+
+    margin:auto;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+.logo{
+
+
+    font-size:26px;
+
+
+    font-weight:800;
+
+
+    color:var(--text);
+
+
+}
+
+
+
+.logo span{
+
+
+    color:var(--green);
+
+
+}
+
+
+
+
+
+nav{
+
+
+    display:flex;
+
+
+    gap:35px;
+
+
+}
+
+
+
+nav a{
+
+
+    color:var(--muted);
+
+
+    font-size:15px;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+nav a:hover,
+nav .active{
+
+
+    color:var(--green);
+
+
+}
+
+
+
+
+
+.actions{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:15px;
+
+
+}
+
+
+
+
+.theme-btn{
+
+
+    width:45px;
+
+
+    height:45px;
+
+
+    border-radius:50%;
+
+
+    background:var(--card);
+
+
+    color:var(--text);
+
+
+    border:
+
+    1px solid var(--border);
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+
+/* ================= HERO ================= */
+
+
+.hero{
+
+
+    min-height:480px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:space-between;
+
+
+    position:relative;
+
+
+}
+
+
+
+.hero-left{
+
+
+    width:55%;
+
+
+}
+
+
+
+
+.hero-left h1{
+
+
+    font-size:68px;
+
+
+    line-height:1.05;
+
+
+    font-weight:900;
+
+
+    letter-spacing:-2px;
+
+
+    margin-bottom:25px;
+
+
+
+    background:var(--text);
+
+
+
+    -webkit-background-clip:text;
+
+
+
+
+}
+
+
+
+
+.hero-left p{
+
+
+    font-size:18px;
+
+
+    max-width:520px;
+
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+
+.hero-buttons{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+}
+
+
+
+
+.hero-right{
+
+
+    width:40%;
+
+
+    height:450px;
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+
+/* ================= FLOATING STAT CARDS ================= */
+
+
+.floating-card{
+
+
+    position:absolute;
+
+
+    padding:22px 30px;
+
+
+    border-radius:20px;
+
+
+    background:var(--card);
+
+
+    border:
+
+    1px solid var(--border);
+
+
+    backdrop-filter:blur(18px);
+
+
+    box-shadow:var(--shadow);
+
+
+}
+
+
+
+
+
+.floating-card h2{
+
+
+    font-size:34px;
+
+
+    color:white;
+
+
+}
+
+.raised{
+     font-size:34px;
+    background:var(--text);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+
+
+
+
+.floating-card p{
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+.card1{
+
+
+    top:40px;
+
+
+    right:120px;
+
+
+}
+
+
+
+
+
+.card2{
+
+
+    top:160px;
+
+
+    right:0;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #38bdf8
+    );
+
+
+}
+
+
+
+
+.card3{
+
+
+    bottom:80px;
+
+
+    right:150px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #38bdf8
+    );
+
+
+}
+
+
+
+
+
+
+
+/* ================= FEATURE SECTION ================= */
+
+
+
+.features{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+
+    gap:25px;
+
+
+}
+
+
+
+
+
+
+.feature-card{
+
+
+    padding:32px;
+
+
+    min-height:250px;
+
+
+    background:var(--card);
+
+
+    border:
+
+    1px solid var(--border);
+
+
+    border-radius:var(--radius);
+
+
+    backdrop-filter:blur(20px);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.feature-card:hover{
+
+
+    transform:translateY(-8px);
+
+
+}
+
+
+
+.icon-box{
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-radius:16px;
+
+
+    background:
+
+    rgba(0,217,156,.15);
+
+
+    color:var(--green);
+
+
+    font-size:24px;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+.feature-card h3{
+
+
+    margin-bottom:12px;
+
+
+    font-size:21px;
+
+
+}
+
+
+
+
+
+/* ================= WHY FUNDBRIDGE ================= */
+
+
+.why{
+    margin-top:90px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+.why h2{
+
+
+    font-size:38px;
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+.subtitle{
+
+
+    margin-bottom:45px;
+
+
+}
+
+
+
+
+.why-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+
+    gap:25px;
+
+
+}
+
+
+
+
+
+.why-grid div{
+
+    border:0.5px solid var(--border);
+
+    border-radius:20px;
+
+    padding:25px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.why-grid i{
+
+
+    color:var(--green);
+
+
+    font-size:34px;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.why-grid h4{
+
+
+    margin-bottom:10px;
+
+
+    font-size:18px;
+
+
+}
+/* ==========================================================
+   HOW IT WORKS
+========================================================== */
+
+
+.how{
+
+    margin-top:90px;
+
+
+    padding:45px 35px;
+
+
+    background:var(--card);
+
+
+    border:
+
+    1px solid var(--border);
+
+
+    border-radius:30px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.how h2{
+
+
+    font-size:38px;
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+
+.steps{
+  
+
+
+    margin-top:45px;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(5,1fr);
+
+
+    gap:20px;
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.step{
+
+    border:#6efad0  1px solid;
+
+    border-radius:20px;
+
+
+    padding:25px 15px;
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.number{
+
+
+    width:35px;
+
+
+    height:35px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    margin:auto;
+
+
+    border-radius:50%;
+
+
+    background:var(--green);
+
+
+    color:#fff;
+
+
+    font-size:14px;
+
+
+    font-weight:700;
+
+
+}
+
+
+
+
+
+.step i{
+
+
+    margin:20px 0;
+
+
+    font-size:35px;
+
+
+    color:var(--green);
+
+
+}
+
+
+
+
+
+.step h3{
+
+
+    font-size:18px;
+
+
+    margin-bottom:12px;
+
+
+}
+
+
+
+
+
+.step p{
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   DISCOVER OPPORTUNITIES
+========================================================== */
+
+
+.discover{
+    margin-top:90px;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    300px 1fr;
+
+
+    gap:35px;
+
+
+    padding:30px;
+
+
+    background:var(--card);
+
+
+    border:
+
+    1px solid var(--border);
+
+
+    border-radius:25px;
+
+
+}
+
+
+
+
+
+.discover-heading h2{
+
+
+    font-size:32px;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+
+.discover-heading p{
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+.discover-heading .outline-btn{
+
+
+    margin-top:15px;
+
+
+}
+
+
+
+
+
+
+.startup-list{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+.startup-card{
+
+
+    overflow:hidden;
+
+
+    background:var(--bg-light);
+
+
+    border-radius:20px;
+
+
+    border:
+
+    1px solid var(--border);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.startup-card:hover{
+
+
+    transform:translateY(-8px);
+
+
+}
+
+
+
+
+.startup-card img{
+
+
+    width:100%;
+
+
+    height:140px;
+
+
+    object-fit:cover;
+
+
+}
+
+
+
+
+
+.startup-card span{
+
+
+    display:inline-block;
+
+
+    margin:18px 18px 5px;
+
+
+    padding:5px 12px;
+
+
+    border-radius:20px;
+
+
+    background:
+
+    rgba(0,217,156,.15);
+
+
+    color:var(--green);
+
+
+    font-size:12px;
+
+
+}
+
+
+
+
+
+.startup-card h3{
+
+
+    margin:0 18px 10px;
+
+
+    font-size:18px;
+
+
+}
+
+
+
+
+
+.startup-card p{
+
+
+    margin:0 18px;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+.startup-card strong{
+
+
+    display:block;
+
+
+    margin:15px 18px;
+
+
+    color:var(--green);
+
+
+    font-size:20px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   TESTIMONIAL
+========================================================== */
+
+
+.testimonials{
+
+    margin-top:90px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+.testimonials h2{
+
+
+    font-size:38px;
+
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+
+.testimonial-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:25px;
+
+
+}
+
+
+
+
+
+.testimonial-card{
+
+
+    min-height:230px;
+
+
+    padding:30px;
+
+
+    text-align:left;
+
+
+    border-radius:22px;
+
+
+    background:var(--card);
+
+
+    border:
+
+    1px solid var(--border);
+
+
+}
+
+
+
+
+
+.testimonial-card i{
+
+
+    font-size:28px;
+
+
+    color:var(--green);
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.testimonial-card p{
+
+
+    font-size:15px;
+
+
+}
+
+
+
+
+
+.testimonial-card h4{
+
+
+    margin-top:25px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   CTA SECTION
+========================================================== */
+
+
+.cta{
+    margin-top:90px;
+
+
+    padding:45px;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    gap:30px;
+
+
+    border-radius:25px;
+
+
+    background:
+
+
+    linear-gradient(
+
+    120deg,
+
+    #00d99c,
+
+    #2563eb
+
+    );
+
+
+}
+
+
+
+
+
+.cta h2{
+
+
+    color:#fff;
+
+
+    font-size:35px;
+
+
+    max-width:700px;
+
+
+}
+
+
+
+
+
+.cta p{
+
+
+    color:#fff;
+
+
+}
+
+
+
+
+
+.cta .primary-btn{
+
+
+    background:#fff;
+
+
+    color:#00b982;
+
+
+    box-shadow:none;
+
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+
+
+.footer{
+
+
+    margin-top:70px;
+
+
+    padding:50px 0;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    2fr 1fr 1fr 1fr 1.5fr;
+
+
+    gap:35px;
+
+
+    border-top:
+
+    1px solid var(--border);
+
+
+}
+
+
+
+
+
+.footer h3{
+
+
+    font-size:25px;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+
+.footer h4{
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.footer a{
+
+
+    display:block;
+
+
+    color:var(--muted);
+
+
+    margin-bottom:12px;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+.footer input{
+
+
+    width:100%;
+
+
+    padding:13px 18px;
+
+
+    border-radius:30px;
+
+
+    background:var(--card);
+
+
+    border:
+
+    1px solid var(--border);
+
+
+    color:var(--text);
+
+
+    outline:none;
+
+
+}
+
+
+
+
+
+.copyright{
+
+
+    text-align:center;
+
+
+    padding:20px;
+
+
+    border-top:
+
+    1px solid var(--border);
+
+
+    color:var(--muted);
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+
+@media(max-width:1100px){
+
+
+
+.hero{
+
+
+    flex-direction:column;
+
+
+    text-align:center;
+
+
+}
+
+
+
+.hero-left{
+
+
+    width:100%;
+
+
+}
+
+
+
+.hero-right{
+
+
+    display:none;
+
+
+}
+
+
+
+.features{
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+}
+
+
+
+.why-grid{
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+}
+
+
+
+.steps{
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+}
+
+
+
+.discover{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+.startup-list{
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+}
+
+
+
+.footer{
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:768px){
+
+
+
+.navbar{
+
+
+    flex-wrap:wrap;
+
+
+}
+
+
+
+nav{
+
+
+    display:none;
+
+
+}
+
+
+
+.hero-left h1{
+
+
+    font-size:42px;
+
+
+}
+
+
+
+.features,
+.why-grid,
+.steps,
+.startup-list,
+.testimonial-grid{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+.cta{
+
+
+    flex-direction:column;
+
+
+    text-align:center;
+
+
+}
+
+
+
+.footer{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+/* ==========================================================
+   SMOOTH ANIMATION
+========================================================== */
+
+
+.feature-card,
+.why-grid div,
+.step,
+.startup-card,
+.testimonial-card{
+
+
+    transition:
+
+    transform .3s ease,
+
+    box-shadow .3s ease;
+
+
+}
+
+
+
+.feature-card:hover,
+
+.testimonial-card:hover{
+
+
+    box-shadow:
+
+    0 20px 45px rgba(0,0,0,.25);
+
+
+}
+.step:hover{
+        box-shadow:
+
+    0 20px 45px rgba(50, 207, 121, 0.25);
+}
+.why-grid div:hover{
+    box-shadow:
+
+    0 20px 45px rgba(37, 59, 39, 0.25);
+}
