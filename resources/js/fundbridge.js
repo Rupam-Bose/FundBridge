@@ -1,264 +1,96 @@
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
 
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
-
-
-    const themeButton = document.getElementById("themeToggle");
-
-    const icon = themeButton.querySelector("i");
-
-
-
-
-
-    /*
-        Load saved theme
-    */
-
-
-    const savedTheme = localStorage.getItem("fundbridge-theme");
-
-
-
-    if (savedTheme === "light") {
-
-
-        document.body.classList.add("light");
-
-
-        icon.classList.remove("fa-moon");
-
-        icon.classList.add("fa-sun");
-
-
-    }
-
-
-
-
-
-
-
-    /*
-        Toggle Theme
-    */
-
-
-    themeButton.addEventListener("click", function () {
-
-
-
-        document.body.classList.toggle("light");
-
-
-
-        if (document.body.classList.contains("light")) {
-
-
-            localStorage.setItem(
-                "fundbridge-theme",
-                "light"
-            );
-
-
-            icon.classList.remove(
-                "fa-moon"
-            );
-
-
-            icon.classList.add(
-                "fa-sun"
+        const button =
+            document.getElementById(
+                "themeToggle"
             );
 
 
 
-        }
+        const icon =
+            button?.querySelector("i");
 
-        else {
 
 
-            localStorage.setItem(
-                "fundbridge-theme",
-                "dark"
+        let theme =
+            localStorage.getItem(
+                "fundbridge-theme"
             );
 
 
-            icon.classList.remove(
-                "fa-sun"
-            );
+
+        if (theme === "light") {
+
+            document.body.classList.add("light");
 
 
-            icon.classList.add(
-                "fa-moon"
-            );
+            if (icon) {
 
-
-        }
-
-
-
-    });
-
-
-
-
-
-});
-
-
-
-
-
-
-
-
-
-/* =====================================================
-   Smooth Scroll Navigation
-===================================================== */
-
-
-document.querySelectorAll("nav a").forEach(link => {
-
-
-    link.addEventListener("click", function (e) {
-
-
-        if (this.getAttribute("href").startsWith("#")) {
-
-
-            e.preventDefault();
-
-
-            const section =
-                document.querySelector(
-                    this.getAttribute("href")
-                );
-
-
-            if (section) {
-
-
-                section.scrollIntoView({
-
-                    behavior: "smooth"
-
-                });
-
+                icon.className =
+                    "fa-solid fa-sun";
 
             }
 
-
         }
 
 
 
-    });
+
+        button?.addEventListener(
+            "click",
+            () => {
 
 
-});
-
-
-
-
-
-
-
-
-
-/* =====================================================
-   Card Hover Animation
-===================================================== */
-
-
-const cards =
-    document.querySelectorAll(
-        ".feature-card,.startup-card,.testimonial-card"
-    );
+                document.body.classList.toggle(
+                    "light"
+                );
 
 
 
-cards.forEach(card => {
+                if (
+                    document.body.classList.contains("light")
+                ) {
 
 
-    card.addEventListener(
-        "mouseenter",
-        () => {
-
-
-            card.style.transform =
-                "translateY(-8px)";
-
-
-        });
-
-
-
-    card.addEventListener(
-        "mouseleave",
-        () => {
-
-
-            card.style.transform =
-                "translateY(0)";
-
-
-        });
-
-
-});
-
-
-
-
-
-
-
-
-
-/* =====================================================
-   Scroll Reveal Animation
-===================================================== */
-
-
-const observer =
-    new IntersectionObserver(
-        (entries) => {
-
-
-            entries.forEach(entry => {
-
-
-                if (entry.isIntersecting) {
-
-
-                    entry.target.classList.add(
-                        "show"
+                    localStorage.setItem(
+                        "fundbridge-theme",
+                        "light"
                     );
+
+
+
+                    if (icon)
+
+                        icon.className =
+                            "fa-solid fa-sun";
+
+
+                }
+
+                else {
+
+
+                    localStorage.setItem(
+                        "fundbridge-theme",
+                        "dark"
+                    );
+
+
+
+                    if (icon)
+
+                        icon.className =
+                            "fa-solid fa-moon";
 
 
                 }
 
 
+
             });
 
 
-        },
-        {
-            threshold: 0.15
-        }
-
-    );
-
-
-
-document
-    .querySelectorAll(
-        "section,.feature-card,.step,.startup-card"
-    )
-    .forEach(
-        (el) => observer.observe(el)
-    );
+    });

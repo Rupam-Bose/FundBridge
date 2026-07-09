@@ -1,11 +1,268 @@
-@import 'tailwindcss';
+@import "./fundbridge.css";
+@import "./register.css";
+:root {
+    --bg: #061426;
+    --bg-soft: #0b1c34;
+    --card: rgba(255,255,255,.06);
+    --text: #ffffff;
+    --muted: #9eacc2;
+    --border: rgba(255,255,255,.12);
+    --green: #00d99c;
+    --green-dark: #00b982;
+    --blue: #2563eb;
+    --radius: 22px;
+}
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+/* Light Mode */
+
+body.light {
+    --bg: #ffffff;
+    --bg-soft: #f6f9fc;
+    --card: rgba(255,255,255,.9);
+    --text: #10213d;
+    --muted: #64748b;
+    --border: rgba(0,0,0,.08);
+}
+
+
+/* Reset */
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter","Segoe UI",Arial,sans-serif;
+}
+
+
+html {
+    scroll-behavior:smooth;
+}
+
+
+body {
+    background:
+    radial-gradient(circle at 10% 5%,rgba(0,217,156,.15),transparent 35%),
+    radial-gradient(circle at 90% 10%,rgba(37,99,235,.15),transparent 35%),
+    var(--bg);
+
+    color:var(--text);
+    transition:.3s;
+    overflow-x:hidden;
+}
+
+
+a {
+    text-decoration:none;
+    color:inherit;
+}
+
+
+p {
+    color:var(--muted);
+    line-height:1.6;
+}
+
+
+.container {
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+
+button {
+    font-family:inherit;
+}
+
+
+.primary-btn {
+    border:none;
+    padding:14px 32px;
+    border-radius:50px;
+    background:linear-gradient(135deg,var(--green),var(--green-dark));
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 12px 30px rgba(0,217,156,.25);
+}
+
+
+.primary-btn:hover {
+    transform:translateY(-3px);
+}
+
+
+.outline-btn {
+    padding:13px 30px;
+    border-radius:50px;
+    border:1px solid var(--green);
+    background:transparent;
+    color:var(--green);
+    cursor:pointer;
+}
+
+
+.outline-btn:hover {
+    background:var(--green);
+    color:white;
+}
+
+
+/* Header */
+
+
+.header {
+    padding:25px 0;
+}
+
+
+.navbar {
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+.logo {
+    font-size:26px;
+    font-weight:800;
+    color:var(--text);
+}
+
+
+.logo span {
+    color:var(--green);
+}
+
+
+nav {
+    display:flex;
+    gap:35px;
+}
+
+
+nav a {
+    color:var(--muted);
+    font-size:15px;
+    transition:.3s;
+}
+
+
+nav a:hover,
+nav a.active {
+    color:var(--green);
+}
+
+
+.actions {
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+
+.theme-btn {
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    cursor:pointer;
+}
+
+/* Footer */
+
+
+.footer {
+    margin-top:70px;
+    padding:50px 0;
+
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr 1.5fr;
+    gap:35px;
+
+    border-top:1px solid var(--border);
+}
+
+
+.footer h3 {
+    font-size:26px;
+    margin-bottom:15px;
+}
+
+
+.footer h4 {
+    margin-bottom:18px;
+}
+
+
+.footer a {
+    display:block;
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+
+.footer input {
+    width:100%;
+    padding:13px 18px;
+
+    border-radius:30px;
+    border:1px solid var(--border);
+
+    background:var(--card);
+    color:var(--text);
+}
+
+
+.copyright {
+    text-align:center;
+    padding:20px;
+    color:var(--muted);
+    border-top:1px solid var(--border);
+    font-size:14px;
+}
+
+
+
+/* Responsive */
+
+
+@media(max-width:900px){
+
+    nav {
+        display:none;
+    }
+
+    .navbar {
+        flex-wrap:wrap;
+    }
+
+    .footer {
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .footer {
+        grid-template-columns:1fr;
+    }
+
+    .primary-btn,
+    .outline-btn {
+        padding:13px 22px;
+    }
+
 }
