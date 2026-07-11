@@ -6,70 +6,38 @@
 
 @endsection
 
-
-
-
 @section('content')
         <section class="hero container">
-
             <div class="hero-left">
-
                 <h1>Connect Founders<br>
-
                     with Investors
-
                 </h1>
                 <p>
-
                     Connect founders with investors,
                     partnership and fundraising opportunities
                     through a creative platform.
 
                 </p>
-
                 <div class="hero-buttons">
-
                     <button class="primary-btn">Get Started</button>
-
                     <button class="outline-btn">Tour Now</button>
-
                 </div>
-
-
-
             </div>
 
-
-
-
-
             <div class="hero-right">
-
-
                 <div class="floating-card card1">
-
                     <h2 class="raised">$2.3B</h2>
-
                     <p>Raised</p>
-
                 </div>
 
-
-
-
                 <div class="floating-card card2">
-
                     <h2>1,200+</h2>
                     <p>Startups</p>
-
                 </div>
 
                 <div class="floating-card card3">
-
                     <h2>850+</h2>
-
                     <p>Investors</p>
-
                 </div>
 
             </div>
@@ -79,49 +47,23 @@
 
         <!-- Feature Cards -->
         <section class="features container">
-
-
             <div class="feature-card">
-
-
                 <div class="icon-box">
-
                     <i class="fa-solid fa-bullhorn"></i>
-
                 </div>
-
-
-                <h3>
-                    Showcase Ventures
-                </h3>
-
+                <h3>Showcase Ventures</h3>
 
                 <p>
-
                     Showcase ventures for branding,
                     experience, learning and platform features.
-
                 </p>
-
-
             </div>
 
-
-
             <div class="feature-card">
-
-
                 <div class="icon-box">
-
                     <i class="fa-solid fa-users"></i>
-
                 </div>
-
-
-                <h3>
-                    Connect Investors
-                </h3>
-
+                <h3>Connect Investors</h3>
 
                 <p>
 
@@ -491,160 +433,59 @@
 
                 <div class="startup-card">
 
-
                     <img src="https://picsum.photos/301/150">
+                    <span>FinTech</span>
+                    <h3>PayFlow</h3>
 
+                    <p>Simplifying payments.</p>
 
-                    <span>
-                        FinTech
-                    </span>
-
-
-                    <h3>
-                        PayFlow
-                    </h3>
-
-
-                    <p>
-                        Simplifying payments.
-                    </p>
-
-
-                    <strong>
-                        $1.8M
-                    </strong>
-
-
+                    <strong>$1.8M</strong>
                 </div>
-
-
 
                 <div class="startup-card">
-
-
                     <img src="https://picsum.photos/302/150">
+                    <span>HealthTech</span>
 
+                    <h3>MedConnect</h3>
 
-                    <span>
-                        HealthTech
-                    </span>
-
-
-                    <h3>
-                        MedConnect
-                    </h3>
-
-
-                    <p>
-                        Healthcare connection platform.
-                    </p>
-
-
-                    <strong>
-                        $3.2M
-                    </strong>
-
-
+                    <p>Healthcare connection platform.</p>
+                    <strong>$3.2M</strong>
                 </div>
-
-
-
-
             </div>
-
-
         </section>
-
 
     <!-- testimonial -->
      <div class="test">
         <section class="testimonials container">
-
-
-            <h2>
-                What Our Users Say
-            </h2>
-
-
+            <h2>What Our Users Say</h2>
 
             <div class="testimonial-grid">
-
-
                 <div class="testimonial-card">
-
                     <i class="fa-solid fa-quote-left"></i>
-
-
                     <p>
-
                         FundBridge helped us connect
                         with the right investors.
-
                     </p>
 
-
-                    <h4>
-                        Alex Morgan
-                    </h4>
-
+                    <h4>Alex Morgan</h4>
 
                 </div>
 
-
-
-
-
                 <div class="testimonial-card">
-
-
                     <i class="fa-solid fa-quote-left"></i>
+                    <p>The platform is intuitive and powerful.</p>
 
-
-                    <p>
-
-                        The platform is intuitive and powerful.
-
-                    </p>
-
-
-                    <h4>
-                        Priya Shah
-                    </h4>
-
-
+                    <h4>Priya Shah</h4>
                 </div>
 
-
-
-
-
-
-
                 <div class="testimonial-card">
-
-
                     <i class="fa-solid fa-quote-left"></i>
-
-
                     <p>
-
                         Easy to discover high potential startups.
-
                     </p>
-
-
-                    <h4>
-                        Daniel Lee
-                    </h4>
-
-
+                    <h4>Daniel Lee</h4>
                 </div>
-
-
-
             </div>
-
-
         </section>
         </div>
 
@@ -653,45 +494,16 @@
 
     <div class="con">
         <section class="cta container">
-
-
             <div>
-
-
                 <h2>
-
                     Ready to bridge the gap between
                     ideas and investment?
-
                 </h2>
 
-
-                <p>
-                    Join FundBridge today and build the future.
-
-                </p>
-
-
+                <p>Join FundBridge today and build the future.</p>
             </div>
 
-
-
-            <button class="primary-btn">
-
-                Get Started Now
-
-            </button>
-
-
+            <button class="primary-btn">Get Started Now</button>
         </section>
         </div>
-
-    <!-- footer -->
-
-   
-
-
-
-
-
 @endsection

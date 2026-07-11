@@ -1,0 +1,154 @@
+/* =========================
+   SIDEBAR
+========================= */
+
+@import "./founder/dashboard.css";
+.sidebar {
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    width:250px;
+
+    height:100vh;
+
+    padding:30px 20px;
+
+    background:var(--bg-soft);
+
+    border-right:1px solid var(--border);
+
+}
+
+
+
+.dashboard-logo {
+
+    font-size:28px;
+
+    font-weight:800;
+
+    color:var(--text);
+
+    margin-bottom:45px;
+
+}
+
+
+
+.dashboard-logo span {
+
+    color:var(--green);
+
+}
+
+
+
+.sidebar-menu {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+
+
+.sidebar-menu a {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    color:var(--muted);
+
+    cursor:pointer;
+
+}
+
+
+
+.sidebar-menu a i {
+
+    width:20px;
+
+}
+
+
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+
+    background:rgba(0,217,156,.15);
+
+    color:var(--green);
+
+}
+
+
+
+
+@media(max-width:900px){
+
+
+.sidebar {
+
+    width:80px;
+
+}
+
+
+.dashboard-logo {
+
+    font-size:0;
+
+}
+
+
+.dashboard-logo span {
+
+    font-size:28px;
+
+}
+
+
+.sidebar-menu span {
+
+    display:none;
+
+}
+
+
+.sidebar-menu a {
+
+    justify-content:center;
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.sidebar {
+
+    display:none;
+
+}
+
+
+}

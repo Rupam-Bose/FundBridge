@@ -1,5 +1,6 @@
 @import "./fundbridge.css";
 @import "./register.css";
+@import "./login.css";
 :root {
     --bg: #061426;
     --bg-soft: #0b1c34;
