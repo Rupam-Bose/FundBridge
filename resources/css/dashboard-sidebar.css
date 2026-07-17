@@ -1,0 +1,310 @@
+/*
+   FundBridge — Dashboard Sidebar CSS
+*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: var(--bg-soft);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0;
+    z-index: 100;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+/*Logo*/
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 22px 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+}
+
+.sidebar-logo-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--green), var(--green-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.sidebar-logo-text {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text);
+    white-space: nowrap;
+}
+
+.sidebar-logo-text span {
+    color: var(--green);
+}
+
+/*Nav Menu*/
+
+.sidebar-menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 12px;
+    overflow-y: auto;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border-radius: 12px;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.sidebar-menu a:hover {
+    background: rgba(0, 217, 156, 0.1);
+    color: var(--green);
+}
+
+.sidebar-menu a.active {
+    background: linear-gradient(135deg, rgba(0,217,156,0.2), rgba(0,185,130,0.1));
+    color: var(--green);
+    font-weight: 600;
+    border: 1px solid rgba(0, 217, 156, 0.2);
+}
+
+.sidebar-menu a i {
+    width: 20px;
+    text-align: center;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.sidebar-menu .menu-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    opacity: 0.6;
+    padding: 16px 14px 6px;
+}
+
+/* Badge on sidebar link */
+.sidebar-badge {
+    margin-left: auto;
+    background: var(--green);
+    color: #000;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    min-width: 20px;
+    text-align: center;
+}
+
+/*Sidebar Footer (User Info + Logout)*/
+
+.sidebar-footer {
+    padding: 16px 14px;
+    border-top: 1px solid var(--border);
+    margin: 0 12px;
+}
+
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 8px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    transition: background 0.2s;
+}
+
+.sidebar-user:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.sidebar-user img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--green);
+    flex-shrink: 0;
+}
+
+.sidebar-user-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sidebar-user-info strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar-user-info span {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: capitalize;
+}
+
+.logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background: rgba(239,68,68,0.1);
+    border-color: rgba(239,68,68,0.4);
+    color: #ef4444;
+}
+
+/*Collapsed state*/
+
+.sidebar.collapsed {
+    width: 72px;
+}
+
+.sidebar.collapsed .sidebar-logo-text,
+.sidebar.collapsed .sidebar-menu a span,
+.sidebar.collapsed .sidebar-badge,
+.sidebar.collapsed .sidebar-user-info,
+.sidebar.collapsed .sidebar-footer .logout-btn span,
+.sidebar.collapsed .menu-label {
+    display: none;
+}
+
+.sidebar.collapsed .sidebar-logo {
+    justify-content: center;
+    padding: 0 0 24px;
+}
+
+.sidebar.collapsed .sidebar-user {
+    justify-content: center;
+}
+
+.sidebar.collapsed .sidebar-footer {
+    margin: 0;
+}
+
+.sidebar.collapsed .sidebar-menu a {
+    justify-content: center;
+}
+
+.sidebar.collapsed .logout-btn {
+    justify-content: center;
+}
+
+/*Toggle Button*/
+
+.sidebar-toggle {
+    position: absolute;
+    bottom: 80px;
+    right: -14px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 11px;
+    color: var(--muted);
+    z-index: 10;
+    transition: all 0.2s;
+}
+
+.sidebar-toggle:hover {
+    color: var(--green);
+    border-color: var(--green);
+}
+
+/*Responsive*/
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 72px;
+    }
+
+    .sidebar-logo-text,
+    .sidebar-menu a span,
+    .sidebar-badge,
+    .sidebar-user-info,
+    .menu-label {
+        display: none;
+    }
+
+    .sidebar-logo {
+        justify-content: center;
+    }
+
+    .sidebar-menu a {
+        justify-content: center;
+    }
+
+    .sidebar-user {
+        justify-content: center;
+    }
+
+    .sidebar-footer {
+        margin: 0;
+        padding: 12px 8px;
+    }
+
+    .logout-btn {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .logout-btn span {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+}

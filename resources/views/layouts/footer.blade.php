@@ -1,26 +1,39 @@
+</main>
+
+</div>
+
+
 <footer class="dashboard-footer">
 
 
-    <p>
-        © 2026 FundBridge. All rights reserved.
-    </p>
+<p>
+© 2026 FundBridge. All rights reserved.
+</p>
 
 
-    <div>
+<div>
 
-        <a>
-            Privacy
-        </a>
+<a>
+Privacy
+</a>
 
-        <a>
-            Terms
-        </a>
 
-        <a>
-            Support
-        </a>
+<a>
+Terms
+</a>
 
-    </div>
+
+<a>
+Support
+</a>
+
+
+</div>
 
 
 </footer>
+
+
+</body>
+
+</html>

@@ -25,12 +25,13 @@ class LoginController extends Controller
             $request->session()->regenerate();
             $user = Auth::user();
             if ($user->role == 'founder') {
-                return redirect()
-                    ->route('founder.dashboard');
+                return redirect()->route('founder.dashboard');
             }
             if ($user->role == 'investor') {
-                return redirect()
-                    ->route('investor.dashboard');
+                return redirect()->route('investor.dashboard');
+            }
+            if ($user->role == 'admin') {
+                return redirect()->route('admin.dashboard');
             }
         }
 
@@ -39,12 +40,38 @@ class LoginController extends Controller
         ]);
     }
 
+    public function adminLogin(Request $request)
+    {
+        $request->validate([
+            'email'    => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            $request->session()->regenerate();
+            $user = Auth::user();
+
+            if ($user->role === 'admin') {
+                return redirect()->route('admin.dashboard');
+            }
+
+            // Not an admin — log them out
+            Auth::logout();
+            return back()->withErrors([
+                'email' => 'You do not have admin access.',
+            ]);
+        }
+
+        return back()->withErrors([
+            'email' => 'Invalid credentials.',
+        ]);
+    }
+
     public function logout(Request $request)
     {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()
-            ->route('login');
+        return redirect()->route('login');
     }
 }

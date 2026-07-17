@@ -71,7 +71,7 @@
 
                 <input type="password" name="password" placeholder="Enter your password">
 
-                <u><a class="forgot">Forgot Password?</a></u>
+                <u><a class="forgot" href="{{ route('password.request') }}">Forgot Password?</a></u>
 
                 <button class="primary-btn">Login</button>
             </form>
@@ -89,7 +89,7 @@
 
                 <input type="password" name="password" placeholder="Enter password">
 
-                <u><a class="forgot">Forgot Password?</a></u>
+                <u><a class="forgot" href="{{ route('password.request') }}">Forgot Password?</a></u>
 
                 <button class="primary-btn">Login as Investor</button>
             </form>

@@ -1,0 +1,43 @@
+/*
+   FundBridge — Dashboard Footer CSS
+   */
+
+.dashboard-footer {
+    padding: 16px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+    background: var(--bg-soft);
+    margin-top: auto;
+}
+
+.dashboard-footer p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+}
+
+.dashboard-footer div {
+    display: flex;
+    gap: 20px;
+}
+
+.dashboard-footer a {
+    font-size: 13px;
+    color: var(--muted);
+    transition: color 0.2s;
+}
+
+.dashboard-footer a:hover {
+    color: var(--green);
+}
+
+@media (max-width: 600px) {
+    .dashboard-footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 14px 16px;
+    }
+}

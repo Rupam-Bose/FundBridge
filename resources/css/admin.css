@@ -1,0 +1,267 @@
+/* 
+   FundBridge — Admin Panel CSS
+ */
+
+/* Admin Login Page */
+.admin-login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(239,68,68,0.15), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(37,99,235,0.15), transparent 40%),
+        var(--bg);
+}
+
+.admin-login-card {
+    width: 100%;
+    max-width: 440px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 44px;
+    margin: 20px;
+}
+
+.admin-login-logo {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.admin-login-logo .shield-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(239,68,68,0.3), rgba(239,68,68,0.1));
+    border: 1px solid rgba(239,68,68,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 26px;
+    color: #ef4444;
+}
+
+.admin-login-logo h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.admin-login-logo p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.admin-login-card .admin-back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--muted);
+    transition: color 0.2s;
+}
+
+.admin-login-card .admin-back-link:hover {
+    color: var(--green);
+}
+
+/* Admin Dashboard Stats*/
+
+.admin-stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.admin-stat-card.red::before   { background: radial-gradient(circle, rgba(239,68,68,0.15), transparent 70%); }
+.admin-stat-card.blue::before  { background: radial-gradient(circle, rgba(37,99,235,0.15), transparent 70%); }
+.admin-stat-card.green::before { background: radial-gradient(circle, rgba(0,217,156,0.15), transparent 70%); }
+.admin-stat-card.purple::before{ background: radial-gradient(circle, rgba(139,92,246,0.15), transparent 70%); }
+
+.admin-stat-card::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.admin-stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.admin-stat-icon.red    { background: rgba(239,68,68,0.15);   color: #ef4444; }
+.admin-stat-icon.blue   { background: rgba(37,99,235,0.15);   color: #60a5fa; }
+.admin-stat-icon.green  { background: rgba(0,217,156,0.15);   color: var(--green); }
+.admin-stat-icon.purple { background: rgba(139,92,246,0.15);  color: #a78bfa; }
+.admin-stat-icon.orange { background: rgba(251,146,60,0.15);  color: #fb923c; }
+
+/*User Management Table*/
+
+.user-table-wrapper {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.user-table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.user-table-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.table-filters {
+    display: flex;
+    gap: 10px;
+}
+
+.table-filter-select,
+.table-search-input {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    color: var(--text);
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.table-filter-select:focus,
+.table-search-input:focus {
+    border-color: var(--green);
+}
+
+.table-search-input {
+    min-width: 200px;
+}
+
+/* Action Buttons */
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.btn-icon:hover {
+    border-color: var(--green);
+    color: var(--green);
+}
+
+.btn-icon.danger:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+    background: rgba(239,68,68,0.1);
+}
+
+/* Role Change Form inline */
+.role-form {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.role-select {
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    color: var(--text);
+    font-size: 12px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Pagination*/
+
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 8px;
+}
+
+.page-btn {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.page-btn:hover,
+.page-btn.active {
+    background: var(--green);
+    color: #000;
+    border-color: var(--green);
+}
+
+/*Admin Sidebar Accent*/
+
+/* Admin sidebar has a red/orange accent instead of green */
+.admin-sidebar .sidebar-logo-icon {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.admin-sidebar .sidebar-menu a:hover,
+.admin-sidebar .sidebar-menu a.active {
+    background: rgba(239,68,68,0.1);
+    color: #ef4444;
+}
+
+.admin-sidebar .sidebar-menu a.active {
+    border-color: rgba(239,68,68,0.2);
+}
+
+.admin-sidebar .sidebar-user img {
+    border-color: #ef4444;
+}
+
+.admin-sidebar .logout-btn:hover {
+    border-color: rgba(239,68,68,0.4);
+    color: #ef4444;
+    background: rgba(239,68,68,0.1);
+}
