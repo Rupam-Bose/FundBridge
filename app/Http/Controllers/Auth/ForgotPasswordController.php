@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ResetPasswordMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -41,20 +42,15 @@ class ForgotPasswordController extends Controller
         // Build reset URL
         $resetUrl = route('password.reset', ['token' => $token, 'email' => $request->email]);
 
-        // Log the URL (for lab/dev — no real email setup needed)
-        logger()->info("Password Reset Link for {$request->email}: {$resetUrl}");
+        // Send via configured mail driver (log driver writes to storage/logs/laravel.log)
+        Mail::to($request->email)->send(new ResetPasswordMail($resetUrl, $request->email));
 
-        // Attempt to send mail if configured (won't fail if mail not configured)
-        try {
-            Mail::send('auth.emails.reset-password', ['resetUrl' => $resetUrl, 'email' => $request->email], function ($mail) use ($request) {
-                $mail->to($request->email)
-                     ->subject('FundBridge — Reset Your Password');
-            });
-        } catch (\Exception $e) {
-            // Mail not configured — link is in logs
-        }
+        $driver = config('mail.default');
+        $msg = $driver === 'log'
+            ? 'Reset link logged to storage/logs/laravel.log (MAIL_MAILER=log). Copy the URL from the log to reset your password.'
+            : 'Password reset link sent! Please check your inbox.';
 
-        return back()->with('status', 'Password reset link sent! Check your email (or check storage/logs/laravel.log for lab/dev mode).');
+        return back()->with('status', $msg);
     }
 
     /** Show the reset password form */
