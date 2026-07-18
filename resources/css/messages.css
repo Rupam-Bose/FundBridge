@@ -1,0 +1,40 @@
+/* ── Chat Message Rows ── */
+.msg-row {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+.msg-row.mine {
+    flex-direction: row-reverse;
+}
+
+/* ── Chat Bubbles ── */
+.bubble {
+    max-width: 65%;
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    word-wrap: break-word;
+}
+.bubble-mine {
+    background: linear-gradient(135deg, rgba(0,217,156,.25), rgba(0,185,130,.15));
+    color: var(--text);
+    border: 1px solid rgba(0,217,156,.2);
+    border-bottom-right-radius: 4px;
+}
+.bubble-theirs {
+    background: var(--bg-soft);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-bottom-left-radius: 4px;
+}
+
+/* ── Timestamp ── */
+.bubble-time {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 4px;
+    text-align: right;
+}

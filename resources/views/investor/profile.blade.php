@@ -127,12 +127,7 @@
 </div>
 
 @push('styles')
-<style>
-.form-label { display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:7px; }
-.form-input { width:100%;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-soft);color:var(--text);font-size:14px;font-family:inherit;outline:none;transition:border-color .2s;box-sizing:border-box; }
-.form-input:focus { border-color:var(--green); }
-textarea.form-input { resize:vertical; }
-</style>
+{{-- Form styles loaded via resources/css/forms.css --}}
 @endpush
 
 @endsection
