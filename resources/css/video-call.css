@@ -1,0 +1,86 @@
+/* ── Video Call Page ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #061426;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Call Header ── */
+.video-header {
+    padding: 14px 24px;
+    background: #0b1c34;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.video-logo {
+    font-size: 18px;
+    font-weight: 900;
+}
+.video-logo span {
+    color: #00d99c;
+}
+.video-call-info {
+    font-size: 14px;
+    color: #9eacc2;
+}
+.video-call-info strong {
+    color: #fff;
+}
+.video-call-timer {
+    margin-left: 12px;
+    font-size: 11px;
+    background: rgba(0,217,156,.15);
+    color: #00d99c;
+    padding: 3px 10px;
+    border-radius: 50px;
+}
+.video-close-btn {
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,.15);
+    background: transparent;
+    color: #9eacc2;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background .2s;
+}
+.video-close-btn:hover {
+    background: rgba(255,255,255,.06);
+}
+
+/* ── Jitsi Container ── */
+#jitsi-container {
+    flex: 1;
+}
+
+/* ── End Call Button ── */
+.end-btn {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 13px 32px;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(239,68,68,.4);
+    z-index: 999;
+    transition: all .2s;
+}
+.end-btn:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+}

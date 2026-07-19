@@ -65,9 +65,6 @@ class CampaignController extends Controller
         $data['raised'] = $data['raised'] ?? 0;
         $campaign = Campaign::create($data);
 
-        // Notify investors who track this venture
-        $campaign->notifyTrackedInvestors();
-
         // Sync venture raised_amount
         $this->syncVentureRaised($data['venture_id']);
 

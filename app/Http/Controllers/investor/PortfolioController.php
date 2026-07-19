@@ -27,8 +27,8 @@ class PortfolioController extends Controller
 
         $sort = $request->get('sort', 'newest');
         match ($sort) {
-            'high_interest' => $query->orderByRaw("FIELD(interest_level,'high','medium','low')"),
-            'low_interest'  => $query->orderByRaw("FIELD(interest_level,'low','medium','high')"),
+            'high_interest' => $query->orderByRaw("CASE interest_level WHEN 'high' THEN 1 WHEN 'medium' THEN 2 WHEN 'low' THEN 3 ELSE 4 END"),
+            'low_interest'  => $query->orderByRaw("CASE interest_level WHEN 'low' THEN 1 WHEN 'medium' THEN 2 WHEN 'high' THEN 3 ELSE 4 END"),
             default         => $query->latest(),
         };
 

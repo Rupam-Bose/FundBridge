@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Investment;
 
 class Campaign extends Model
 {
@@ -28,10 +29,18 @@ class Campaign extends Model
         return $this->belongsTo(Venture::class);
     }
 
+    /** Investments made into this campaign */
+    public function investments()
+    {
+        return $this->hasMany(Investment::class);
+    }
+
     /** Funding progress percentage */
     public function progressPercent(): float
     {
-        if ($this->goal <= 0) return 0;
-        return min(100, round(($this->raised / $this->goal) * 100, 1));
+        $goal   = floatval($this->goal);
+        $raised = floatval($this->raised);
+        if ($goal <= 0) return 0;
+        return min(100, round(($raised / $goal) * 100, 1));
     }
 }
